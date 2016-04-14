@@ -93,6 +93,6 @@ return characteristic.startNotifications();
 
 ## Putting it together
 
-![Screenshot]({{ site.url }}images/2016-04-14.png =250x)
+![Screenshot]({{ site.url }}images/2016-04-14.png){:width="250px"}
 
 [Example application](https://plemont.github.io/apps/hrm/heartRate.html) - [source](https://github.com/plemont/plemont.github.io/tree/master/apps/hrm)
