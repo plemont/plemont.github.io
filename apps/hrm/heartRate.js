@@ -60,6 +60,7 @@ class HeartRateMonitor {
     this.resetAverage_();
     let options = {filters: [{
       services: [this.SERVICE_ID],
+      namePrefix: 'Polar H7'
     }]};
     navigator.bluetooth.requestDevice(options)
   	    .then(device => {
