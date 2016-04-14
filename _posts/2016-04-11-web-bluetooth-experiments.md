@@ -91,8 +91,8 @@ characteristic.addEventListener('characteristicvaluechanged',
 return characteristic.startNotifications();
 ```
 
-## Example
+## Putting it together
 
-![Screenshot]({{ site.url }}images/2016-04-14.png)
+![Screenshot]({{ site.url }}images/2016-04-14.png =250x)
 
 [Example application](https://plemont.github.io/apps/hrm/heartRate.html) - [source](https://github.com/plemont/plemont.github.io/tree/master/apps/hrm)
