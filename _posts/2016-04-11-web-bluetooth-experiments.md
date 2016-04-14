@@ -62,7 +62,7 @@ When successful, the returned Promise resolves to a [`BluetoothDevice`](https://
 
 A successful call of `connectGATT` returns a Promise that resolves to a [`BluetoothRemoteGATTServer`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer). This represents the GATT server on the Polar H7.
 
-[*services*](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services) group logical collections of capabilities known as [*characteristics*](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics).
+The server provides access to services and characteristics: [*Services*](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services) group logical collections of capabilities known as [*characteristics*](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics).
 
 For example, the `heart_rate` service has several characteristics, such as [`heart_rate_measurement`](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml) and [`body_sensor_location`](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.body_sensor_location.xml).
 
