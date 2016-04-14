@@ -79,7 +79,7 @@ Once connected, the fun begins, as the [services](https://learn.adafruit.com/int
 
 ## Monitoring Changes to Characteristics
 
-Having obtained a `BluetoothRemoteGATTCharacteristic` representing the characteristic, [`readValue`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue) can be used to obtain a promise that will ultimately resolve to a value.
+Having obtained a `BluetoothRemoteGATTCharacteristic` representing the characteristic, [`readValue`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue) can be used to obtain a Promise that will ultimately resolve to a value.
 
 However, in the case of the heart rate monitor, I want to keep monitoring for changes to the value. For this, the [`startNotificatons`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications) method is available. A function can be passed to this method, which will be called with the new value whenever a change occurs.
 
