@@ -63,19 +63,19 @@ class HeartRateMonitor {
       namePrefix: 'Polar H7'
     }]};
     navigator.bluetooth.requestDevice(options)
-  	    .then(device => {
-  		    //return device.gatt.connect();
-  		    return device.connectGATT();
-  	    })
-  	    .then(server => {
+        .then(device => {
+          //return device.gatt.connect();
+          return device.connectGATT();
+        })
+        .then(server => {
           return server.getPrimaryService(this.SERVICE_ID);
-  	    })
+        })
         .then(service => {
           return service.getCharacteristic(this.CHARACTERISTIC_ID);
         })
         .then(characteristic => this.handleCharacteristic_(characteristic))
         .catch(error => {
-  	      console.log('Error: ' + error);
-  	    });
+          console.log('Error: ' + error);
+        });
   }
 }
