@@ -69,10 +69,10 @@ Once connected, the fun begins, as the [services](https://learn.adafruit.com/int
 ```javascript
 /* from connectGATT() ... */
 .then(server => {
-  return server.getPrimaryService(0x180D);
+  return server.getPrimaryService(0x180D); // heart_rate
 })
 .then(service => {
-  return service.getCharacteristic(0x2A37);
+  return service.getCharacteristic(0x2A37); // heart_rate_measurement
 })
 .then(characteristic => /* ... handle characteristic ... */)
 ```

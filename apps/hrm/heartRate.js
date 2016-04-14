@@ -68,10 +68,10 @@ class HeartRateMonitor {
           return device.connectGATT();
         })
         .then(server => {
-          return server.getPrimaryService(this.SERVICE_ID); // heart_rate
+          return server.getPrimaryService(this.SERVICE_ID);
         })
         .then(service => {
-          return service.getCharacteristic(this.CHARACTERISTIC_ID); // heart_rate_measurement
+          return service.getCharacteristic(this.CHARACTERISTIC_ID);
         })
         .then(characteristic => this.handleCharacteristic_(characteristic))
         .catch(error => {
