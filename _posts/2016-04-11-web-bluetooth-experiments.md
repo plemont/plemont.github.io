@@ -60,11 +60,13 @@ When successful, the returned Promise resolves to a [`BluetoothDevice`](https://
 
 ## Services and Characteristics
 
-A successful call of `connectGATT` returns a Promise that resolves to a [`BluetoothRemoteGATTServer`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer). This represents the GATT service on the Polar H7. Services group logical collections of capabilities known as *characteristics*.
+A successful call of `connectGATT` returns a Promise that resolves to a [`BluetoothRemoteGATTServer`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer). This represents the GATT server on the Polar H7.
+
+[*services*](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services) group logical collections of capabilities known as [*characteristics*](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics).
 
 For example, the `heart_rate` service has several characteristics, such as [`heart_rate_measurement`](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml) and [`body_sensor_location`](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.body_sensor_location.xml).
 
-Once connected, the fun begins, as the [services](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services) and [characteristics](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics) of the device can be used to access individual values. The following is an example of obtaining a specific characteristic, once successfully connected:
+Once connected, the fun begins, as the services and characteristics of the device can be used to access individual values. The following is an example of obtaining a specific characteristic, once successfully connected:
 
 ```javascript
 /* from connectGATT() ... */
