@@ -27,7 +27,7 @@ class HeartRateMonitor {
   parseHeartRate_(data) {
     let flags = data.getUint8(0);
     if (flags & 0x1) {
-      return data.getUint16(1, /*littleEndian=*/true);
+      return data.getUint16(1, true);
     }
     return data.getUint8(1);
   }

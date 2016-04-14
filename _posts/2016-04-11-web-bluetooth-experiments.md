@@ -26,9 +26,9 @@ On returning home I reasoned that my [Polar H7 sensor](http://www.polar.com/uk-e
 
 ## Setup
 
-At prdesent support for the API is not widespread and not generally complete. If the API is available within your browser, then the [`navigator.bluetooth`](https://webbluetoothcg.github.io/web-bluetooth/#dom-navigator-bluetooth) object will exist. When using the API in application, it would be worth testing whether this exists.
+At present, support for the API is not widespread and not generally complete. If the API is available within your browser, then the [`navigator.bluetooth`](https://webbluetoothcg.github.io/web-bluetooth/#dom-navigator-bluetooth) object will exist. When using the API in application, it would be worth testing whether this exists.
 
-On both Chrome OS and Ubuntu (Chrome v50) it was necessary to enable Web Bluetooth from the [chrome://flags](chrome://flags) page.
+On both Chrome OS and Android 6 it was necessary to enable Web Bluetooth from the [chrome://flags](chrome://flags) page. I was not able to get Ubuntu 16.04 with Chrome 50 Beta working at the time.
 
 ## Initial Connection
 
@@ -40,12 +40,17 @@ The `options` passed to `requestDevice` allow [devices to be filtered by](https:
 *   Name prefix
 *   [Service(s)](https://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx) required
 
-So, it would be possible to specify that I am interested in devices offering the `heart_rate` service.
+So, it would be possible to specify that I am interested in any devices offering the `heart_rate` service.
 
-However, as I am only interested in my Polar device, I chose using a name prefix:
+However, as I am only interested in my Polar device, I chose using a name prefix, and added the `heart_rate` service also:
 
 ```javascript
-let options = {filters: [{namePrefix: "Polar H7"}]};
+let options = {
+  filters: [{
+    services: [0x180D], // heart_rate service
+    namePrefix: "Polar H7"
+  }]
+};
 navigator.bluetooth.requestDevice(options).then(/* ... */)
 ```
 
@@ -55,16 +60,39 @@ When successful, the returned Promise resolves to a [`BluetoothDevice`](https://
 
 ## Services and Characteristics
 
-A successful call of `connectGATT` returns a Promise that resolves to a [`BluetoothRemoteGATTServer`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer). This represents the GATT service on the Polar H7.
+A successful call of `connectGATT` returns a Promise that resolves to a [`BluetoothRemoteGATTServer`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTServer). This represents the GATT service on the Polar H7. Services group logical collections of capabilities known as *characteristics*.
 
-Once connected, the fun begins, as the [services](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services) and [characteristics](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics) of the device can be used to access individual values.
+For example, the `heart_rate` service has several characteristics, such as [`heart_rate_measurement`](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml) and [`body_sensor_location`](https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.body_sensor_location.xml).
 
-### Available Services
+Once connected, the fun begins, as the [services](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services) and [characteristics](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics) of the device can be used to access individual values. The following is an example of obtaining a specific characteristic, once successfully connected:
 
+```javascript
+/* from connectGATT() ... */
+.then(server => {
+  return server.getPrimaryService(0x180D);
+})
+.then(service => {
+  return service.getCharacteristic(0x2A37);
+})
+.then(characteristic => /* ... handle characteristic ... */)
+```
 
+## Monitoring Changes to Characteristics
 
-### Heart Rate Service
+Having obtained a `BluetoothRemoteGATTCharacteristic` representing the characteristic, [`readValue`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/readValue) can be used to obtain a promise that will ultimately resolve to a value.
 
+However, in the case of the heart rate monitor, I want to keep monitoring for changes to the value. For this, the [`startNotificatons`](https://developer.mozilla.org/en-US/docs/Web/API/BluetoothRemoteGATTCharacteristic/startNotifications) method is available. A function can be passed to this method, which will be called with the new value whenever a change occurs.
 
+For example:
 
+```javascript
+characteristic.addEventListener('characteristicvaluechanged',
+    event => this.onHeartRateChanged_(event));
+return characteristic.startNotifications();
+```
 
+## Example
+
+![Screenshot]({{ site.url }}images/2016-04-14.png)
+
+[Example application](https://plemont.github.io/apps/hrm/heartRate.html) - [source](https://github.com/plemont/plemont.github.io/tree/master/apps/hrm)
