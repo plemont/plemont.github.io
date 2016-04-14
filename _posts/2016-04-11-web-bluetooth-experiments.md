@@ -6,13 +6,13 @@ categories: javascript bluetooth
 ---
 ## Introduction
 
-At a recent hackathon I got the chance to experiment with [Web Bluetooth](https://webbluetoothcg.github.io/web-bluetooth/). As that document states in the Abstract, Web Bluetooth is an:
+At a recent hackathon I got the chance to experiment with [Web Bluetooth](https://webbluetoothcg.github.io/web-bluetooth/). The specification abstract states Web Bluetooth is an:
 
 *"...API to discover and communicate with devices over the Bluetooth 4 wireless standard using the [Generic Attribute Profile (GATT)](https://developer.bluetooth.org/TechnologyOverview/Pages/GATT.aspx)."*
 
 Being even less familiar with Bluetooth than most technologies, this ultimately ended up meaning: "*will work with some (newer) Bluetooth peripherals, but likely not with many older ones*".
 
-As part of my initial experimentation at the hackathon, I had tried connecting to my [Polar M400 watch](http://www.polar.com/uk-en/products/sport/M400) - some success. However, it was my hunch that interacting fullly with the watch was not possible using GATT, and that it likely relied on an older standard, incompatible with Web Bluetooth. (*to be explored...*)
+As part of my initial experimentation at the hackathon, I had tried connecting to my [Polar M400 watch](http://www.polar.com/uk-en/products/sport/M400) - some limited success. However, it was my hunch that interacting fullly with the watch was not possible using GATT, and that it likely relied on an older standard, incompatible with Web Bluetooth. (*to be explored...*)
 
 ## Polar H7
 
