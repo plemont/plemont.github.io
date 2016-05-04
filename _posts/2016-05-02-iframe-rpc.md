@@ -2,7 +2,7 @@
 layout: post
 title:  "iframe RPC"
 date:   2016-05-02 21:00:00 +0100
-categories: javascript bluetooth
+categories: javascript browsers
 ---
 ## Introduction
 
