@@ -7,7 +7,7 @@ categories: javascript apps-scripts
 ## Introduction
 
 Working on a recent [Apps Scripts project](https://developers.google.com/apps-script/),
-I had the need to convert images from one whatever format I found them in into
+I had the need to convert images from whatever format I found them in into
 BMP format.
 
 Wait... *BMP format*? Yes, seriously. Well, I didn't *have* to but it actually
