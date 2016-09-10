@@ -18,8 +18,8 @@ This data shows AdWords advertisers the queries that are resulting in their
 ad impressions. This can make a great way of visualising what queries are
 leading to ads being shown.
 
-I have also been using the Sheets API at work, and wanted to find a reason to
-play with it outside of work.
+I have also been using the [Sheets API](https://developers.google.com/sheets/)
+at work, and wanted to find a reason to play with it outside of work.
 
 ## Using Sheets as an aggregator
 
