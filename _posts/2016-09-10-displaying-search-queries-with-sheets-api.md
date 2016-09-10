@@ -26,7 +26,7 @@ at work, and wanted to find a reason to play with it outside of work.
 A key reason why the use case I mention is interesting in the context of Sheets
 is that Sheets can be used as an aggregation platform: Advertisers will often
 have many accounts. By using Sheets, I can have each account write the Search
-Query Performance Report write to separate sheets in a single document, and then
+Query Performance Report to separate sheets in a single document, and then
 retrieve **all** the data with a single call to the Sheets API.
 
 ## Obtaining Search Query Performance Report data
