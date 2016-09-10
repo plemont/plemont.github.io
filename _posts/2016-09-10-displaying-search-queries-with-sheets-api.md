@@ -63,6 +63,7 @@ device.
 ## Details
 
 The project is [available on github](https://github.com/plemont/griddysheets).
-Consult the README.md file for details on setting it up.
+Consult the README.md file for details on setting it up. It seems to work on
+Chrome, other browsers may very - hey I'm not a web developer!
 
 I have published my version at [griddysheets.firebaseapp.com](https://griddysheets.firebaseapp.com)
