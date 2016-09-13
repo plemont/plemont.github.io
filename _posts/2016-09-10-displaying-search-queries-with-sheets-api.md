@@ -32,7 +32,7 @@ retrieve **all** the data with a single call to the Sheets API.
 ## Obtaining Search Query Performance Report data
 
 The easiest way to obtain SQPR data is through [AdWords Scripts](https://developers.google.com/adwords/scripts/).
-Some [simple scripts](https://github.com/plemont/griddysheets/adwords_scripts)
+Some [simple scripts](https://github.com/plemont/griddysheets/tree/master/adwords_scripts)
 allow each account to write the data out to a single spreadsheet.
 
 ![aggregate]({{ site.url }}images/aggregate.png)
