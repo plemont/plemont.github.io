@@ -6,6 +6,8 @@ categories: javascript sheets-api pwa
 ---
 ![aggregate]({{ site.url }}images/grid-example.png)
 
+*Visualisation powered by the Sheets API* - [griddysheets.firebaseapp.com](https://griddysheets.firebaseapp.com)
+
 ## Introduction
 
 Many people will be familar with the [Google Trends Screensaver](https://www.google.com/trends/hottrends/visualize?nrow=3&ncol=4):
