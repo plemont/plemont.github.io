@@ -246,7 +246,7 @@ scripts.
 
 Within the script editor:
 
-1.  Click on **Resources > Developers Console Project...*
+1.  Click on **Resources > Developers Console Project...**
 2.  Click on the project name to open up the *Developer Console*.
 3.  Search for **Slides API** and click on **Enable**.
 
