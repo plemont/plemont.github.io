@@ -21,6 +21,9 @@ the problem I was looking to tackle.
 Near-real time graphs, tables and stats, shown on wall-mounted displays can look
 great. I wondered whether I could use Slides to do this.
 
+> The resulting Apps Script, AdWords script and Chrome extension is available
+[in this project](https://github.com/plemont/preso).
+
 There are plenty of other visualisation tools out there, but the attraction of
 the Slides API was the potential to manipulate *every* aspect of the
 presentation, in a product that is widely available and generally free to use
