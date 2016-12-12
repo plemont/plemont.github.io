@@ -29,6 +29,8 @@ the Slides API was the potential to manipulate *every* aspect of the
 presentation, in a product that is widely available and generally free to use
 with few restrictions.
 
+![preso](/images/sales.png)
+
 So what was the aim:
 
 *   To be able to **update charts, tables and text dynamically** from Apps
