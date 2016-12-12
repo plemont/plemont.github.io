@@ -268,7 +268,7 @@ Having performed this setup, calling the Slides API via the REST interface is
 as simple as passing the OAuth token in the header, as obtained from
 `ScriptApp.getOAuthToken()`, as can be seen in the [sample script](https://github.com/plemont/preso/blob/master/update_preso_appsscript.js).
 
-#### Using the Slides API within AdWords Script
+#### Using the Slides API within AdWords Scripts
 
 Working within AdWords Scripts is a bit more involved than with Apps Script as
 `ScriptApp` is not available to provide an OAuth token.
