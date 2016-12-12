@@ -227,7 +227,7 @@ is able to parse the URL of the current page, and if it is a presentation, work
 out what the URL of the next slide should be.
 
 Furthermore, the extension can invoke fullscreen mode, as well as scheduling the
-period fetches that are required.
+periodic fetches that are required.
 
 With the extension installed, when navigating to the presentation view for a
 Slides document, e.g.:
