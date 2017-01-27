@@ -2,7 +2,7 @@
 layout: post
 title:  "File format conversion within Apps Scripts"
 date:   2016-05-11 21:00:00 +0100
-categories: javascript apps-scripts
+categories: javascript apps-script
 ---
 ## Introduction
 
@@ -13,7 +13,7 @@ BMP format.
 Wait... *BMP format*? Yes, seriously. Well, I didn't *have* to but it actually
 turned out to be the easiest way to achieve what I needed: I wanted to
 manipulate images at a pixel level, and whilst the [PNG spec](https://www.w3.org/TR/PNG/)
-turned out to be really readable and not too hard to implement, BMP was still 
+turned out to be really readable and not too hard to implement, BMP was still
 plain easier for getting quickly to pixel data.
 
 So, pained as I was to use the BMP format, this was a perfect opportunity to use
