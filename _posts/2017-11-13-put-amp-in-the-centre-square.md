@@ -216,7 +216,7 @@ With these problems solved, detecting victory is just a case of determining
 whether any of the 8 (now 9) counters has reached a positive or negative value 3, e.g:
 
 ```
-<p [class]="min(tr,br,lc,rc,fd + c,bd + c,mc + c,mr + c) == 3 ? 'show' : 'hide'" class='hide'>⚡ wins!!!</p>
+<p [class]="max(tr,br,lc,rc,fd + c,bd + c,mc + c,mr + c) == 3 ? 'show' : 'hide'" class='hide'>⚡ wins!!!</p>
 ```
 
 ### Preventing further clicks
